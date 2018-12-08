@@ -1,9 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Provider} from 'react-redux';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import store from './app/store';
+import AppNavigator from './app/routes';
+import HomeContainer from './app/containers/HomeContainer';
 
-export default class App extends Component {
+export default class App extends React.Component {
 
   constructor(){
     super();
@@ -15,9 +17,10 @@ export default class App extends Component {
   render() {
     return (
         <Provider store={store}>
-            <Text>This is some text</Text>
+            <HomeContainer>
+                <AppNavigator></AppNavigator>
+            </HomeContainer>
         </Provider>
     );
   }
 }
-

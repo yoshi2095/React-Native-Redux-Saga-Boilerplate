@@ -1,11 +1,12 @@
-const GET_USER = "GET_USER_CALL";
-const GET_USER_SUCCESS = "GET_USER_SUCCESS";
-const GET_USER_ERROR = "GET_USER_ERROR";
+export const GET_USER_CALL = "GET_USER_CALL";
+export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
+export const GET_USER_ERROR = "GET_USER_ERROR";
 
-export default = {
+export default {
     getUser: (user) => {
+        console.log('get user function called', user);
         return {
-            type: "GET_USER",
+            type: "GET_USER_CALL",
             user: user
         }
     }
